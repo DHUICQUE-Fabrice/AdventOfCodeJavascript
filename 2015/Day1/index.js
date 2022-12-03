@@ -3,8 +3,8 @@ let day = function day(){
     /* GLOBAL */
     dayNumber = __dirname.substring(__dirname.lastIndexOf('Day')+3);
     console.log("Day " + dayNumber + " answers:");
-    const test = true;
-    const test1 = 0;
+    const test = false;
+    const test1 = -3;
     const test2 = 0;
 
     const fs = require('fs');
@@ -22,18 +22,22 @@ let day = function day(){
 
     /* SPECIFIC */
 
-    const element = input.split("\r\n\r\n");
-    let indivElem = [];
-
-    element.forEach(elem => {
-        indivElem.push(elem.split("\r\n"));
-    });
+    const element = input.split('');
 
     /* PART 1 */
-    let answer1 = undefined;
+    let answer1 = 0;
+    element.forEach(char => {
+        answer1 += char === '(' ? 1 : -1;
+    })
 
     /* PART 2 */
-    let answer2 = undefined;
+    let answer2 = 0;
+    let floor = 0;
+    element.every(char => {
+        floor += char === '(' ? 1: -1;
+        answer2++;
+        return floor !== -1;
+    })
 
     /* RESULTS */
     if(answer1 === undefined && answer2 === undefined){
