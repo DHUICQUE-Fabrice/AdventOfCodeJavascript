@@ -3,9 +3,9 @@ let day = function day(){
     /* GLOBAL */
     dayNumber = __dirname.substring(__dirname.lastIndexOf('Day')+3);
     console.log("Day " + dayNumber + " answers:");
-    const test = false;
+    const test = true;
     const test1 = -3;
-    const test2 = 0;
+    const test2 = 5;
 
     const fs = require('fs');
     let dir = test ? __dirname + '/testInput.txt' : __dirname + '/input.txt';
