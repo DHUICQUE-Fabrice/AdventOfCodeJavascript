@@ -3,7 +3,7 @@ let day = function day(){
     /* GLOBAL */
     dayNumber = __dirname.substring(__dirname.lastIndexOf('Day')+3);
     console.log("Day " + dayNumber + " answers:");
-    const test = true;
+    const test = false;
     const test1 = -3;
     const test2 = 5;
 
