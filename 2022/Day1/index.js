@@ -4,7 +4,7 @@ let day = function day(){
     dayNumber = __dirname.substring(__dirname.lastIndexOf('Day')+3);
     console.log("Day " + dayNumber + " answers:");
     
-    const test = false;
+    const test = true;
     const test1 = 24000;
     const test2 = 45000;
     
@@ -22,8 +22,8 @@ let day = function day(){
 
 
     /* SPECIFIC */
-
-    const elves = input.split("\n\n");
+    input = input.replaceAll("\r\n", "\n");
+    const elves = input.split("\n\n")
     let inputByElf = [];
     elves.forEach(element => {
         inputByElf.push(element.split("\n"));

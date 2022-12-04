@@ -21,7 +21,7 @@ let day = function day(){
 
 
     /* SPECIFIC */
-
+    input = input.replaceAll("\r\n", "\n");
     const pairs = input.split("\n");
     let sections = [];
 
