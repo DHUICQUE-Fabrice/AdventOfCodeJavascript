@@ -3,7 +3,7 @@ let year = function year(){
     let day1 = require('./Day1/index');
     let day2 = require('./Day2/index');
     let day3 = require('./Day3/index');
-    // let day4 = require('./Day4/index');
+    let day4 = require('./Day4/index');
     // let day5 = require('./Day5/index');
     // let day6 = require('./Day6/index');
     // let day7 = require('./Day7/index');
@@ -30,7 +30,7 @@ let year = function year(){
     day1;
     day2;
     day3;
-    // day4;
+    day4;
     // day5;
     // day6;
     // day7;

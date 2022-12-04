@@ -3,9 +3,9 @@ let day = function day(){
     /* GLOBAL */
     dayNumber = __dirname.substring(__dirname.lastIndexOf('Day')+3);
     console.log("Day " + dayNumber + " answers:");
-    const test = true;
-    const test1 = 0;
-    const test2 = 0;
+    const test = false;
+    const test1 = 2;
+    const test2 = 4;
 
     const fs = require('fs');
     let dir = test ? __dirname + '/testInput.txt' : __dirname + '/input.txt';
@@ -22,18 +22,42 @@ let day = function day(){
 
     /* SPECIFIC */
 
-    const element = input.split("\r\n\r\n");
-    let indivElem = [];
+    const pairs = input.split("\r\n");
+    let sections = [];
 
-    element.forEach(elem => {
-        indivElem.push(elem.split("\r\n"));
+    pairs.forEach(row => {
+        sections.push(row.split(","));
     });
 
     /* PART 1 */
-    let answer1 = undefined;
+    let answer1 = 0;
+    sections.forEach(assignment => {
+        let minA = parseInt(assignment[0].split('-')[0]);
+        let maxA = parseInt(assignment[0].split('-')[1]);
+        let minB = parseInt(assignment[1].split('-')[0]);
+        let maxB = parseInt(assignment[1].split('-')[1]);
+        if(
+            (minA >= minB && maxA <= maxB) ||
+            (minA <= minB && maxA >= maxB)
+        ){
+            answer1 ++;
+        }
+    })
 
     /* PART 2 */
-    let answer2 = undefined;
+    let answer2 = 0;
+    sections.forEach(assignment => {
+        let minA = parseInt(assignment[0].split('-')[0]);
+        let maxA = parseInt(assignment[0].split('-')[1]);
+        let minB = parseInt(assignment[1].split('-')[0]);
+        let maxB = parseInt(assignment[1].split('-')[1]);
+        if(
+            (minA <= minB && maxA >= minB) ||
+            (minB <= minA && maxB >= minA)
+        ){
+            answer2 ++;
+        }
+    })
 
     /* RESULTS */
     if(answer1 === undefined && answer2 === undefined){
