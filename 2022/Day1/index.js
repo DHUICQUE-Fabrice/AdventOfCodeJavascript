@@ -23,10 +23,10 @@ let day = function day(){
 
     /* SPECIFIC */
 
-    const elves = input.split("\r\n\r\n");
+    const elves = input.split("\n\n");
     let inputByElf = [];
     elves.forEach(element => {
-        inputByElf.push(element.split("\r\n"));
+        inputByElf.push(element.split("\n"));
     });
 
     /* PART 1 */
