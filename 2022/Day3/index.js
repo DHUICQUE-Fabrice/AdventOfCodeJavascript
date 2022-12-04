@@ -22,7 +22,7 @@ let day = function day(){
 
     /* SPECIFIC */
 
-    const element = input.split("\r\n");
+    const element = input.split("\n");
     sacks = []
     element.forEach(sack => {
         sacks.push([
@@ -63,7 +63,7 @@ let day = function day(){
     badges = [];
     groupOfThree.forEach(group => {
         first = group[0].split('');
-        filled = false
+        filled = false;
         first.forEach(char => {
             if(!filled && group[1].includes(char) && group[2].includes(char)){
                 badges.push(char);
