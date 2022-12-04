@@ -21,8 +21,9 @@ let day = function day(){
 
 
     /* SPECIFIC */
-
+    input = input.replaceAll("\r\n", "\n");
     const element = input.split("\n");
+    
     /* PART 1 */
     let answer1 = 0;
     element.forEach(pack => {
