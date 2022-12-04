@@ -22,11 +22,11 @@ let day = function day(){
 
     /* SPECIFIC */
 
-    const element = input.split("\r\n\r\n");
+    const element = input.split("\n\n");
     let indivElem = [];
 
     element.forEach(elem => {
-        indivElem.push(elem.split("\r\n"));
+        indivElem.push(elem.split("\n"));
     });
 
     /* PART 1 */

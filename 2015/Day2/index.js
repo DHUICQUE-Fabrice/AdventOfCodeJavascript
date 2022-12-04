@@ -22,8 +22,7 @@ let day = function day(){
 
     /* SPECIFIC */
 
-    const element = input.split("\r\n");
-
+    const element = input.split("\n");
     /* PART 1 */
     let answer1 = 0;
     element.forEach(pack => {
@@ -34,7 +33,6 @@ let day = function day(){
 
     /* PART 2 */
     let answer2 = 0;
-    console.log(element)
     element.forEach(pack => {
         sides = pack.split('x');
         [l, w, h] = [parseInt(sides[0]), parseInt(sides[1]), parseInt(sides[2])];

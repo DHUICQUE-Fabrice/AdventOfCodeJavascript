@@ -22,7 +22,7 @@ let day = function day(){
 
     /* SPECIFIC */
 
-    const rounds = input.split("\r\n");
+    const rounds = input.split("\n");
 
     /* PART 1 */
     let answer1 = 0;
