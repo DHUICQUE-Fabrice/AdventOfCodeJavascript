@@ -22,7 +22,7 @@ let day = function day(){
 
     /* SPECIFIC */
 
-    const pairs = input.split("\r\n");
+    const pairs = input.split("\n");
     let sections = [];
 
     pairs.forEach(row => {
