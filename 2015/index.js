@@ -1,7 +1,7 @@
 let year = function year(){
     console.log("SOLUTIONS OF YEAR 2015");
     let day1 = require('./Day1/index');
-    // let day2 = require('./Day2/index');
+    let day2 = require('./Day2/index');
     // let day3 = require('./Day3/index');
     // let day4 = require('./Day4/index');
     // let day5 = require('./Day5/index');
@@ -28,7 +28,7 @@ let year = function year(){
 
 
     day1;
-    // day2;
+    day2;
     // day3;
     // day4;
     // day5;

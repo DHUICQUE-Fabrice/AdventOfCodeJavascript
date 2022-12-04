@@ -4,8 +4,8 @@ let day = function day(){
     dayNumber = __dirname.substring(__dirname.lastIndexOf('Day')+3);
     console.log("Day " + dayNumber + " answers:");
     const test = true;
-    const test1 = 0;
-    const test2 = 0;
+    const test1 = 101;
+    const test2 = 48;
 
     const fs = require('fs');
     let dir = test ? __dirname + '/testInput.txt' : __dirname + '/input.txt';
@@ -22,18 +22,18 @@ let day = function day(){
 
     /* SPECIFIC */
 
-    const element = input.split("\r\n\r\n");
-    let indivElem = [];
-
-    element.forEach(elem => {
-        indivElem.push(elem.split("\r\n"));
-    });
+    const element = input.split("\r\n");
 
     /* PART 1 */
-    let answer1 = undefined;
+    let answer1 = 0;
+    element.forEach(pack => {
+        sides = pack.split('x');
+        [l, w, h] = [sides[0], sides[1], sides[2]]
+        answer1 += 2*l*w + 2*w*h + 2*h*l + Math.min(l*w,w*h ,h*l);
+    })
 
     /* PART 2 */
-    let answer2 = undefined;
+    let answer2 = 0;
 
     /* RESULTS */
     if(answer1 === undefined && answer2 === undefined){
