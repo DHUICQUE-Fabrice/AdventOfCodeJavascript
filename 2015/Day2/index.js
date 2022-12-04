@@ -3,7 +3,7 @@ let day = function day(){
     /* GLOBAL */
     dayNumber = __dirname.substring(__dirname.lastIndexOf('Day')+3);
     console.log("Day " + dayNumber + " answers:");
-    const test = true;
+    const test = false;
     const test1 = 101;
     const test2 = 48;
 
@@ -28,12 +28,26 @@ let day = function day(){
     let answer1 = 0;
     element.forEach(pack => {
         sides = pack.split('x');
-        [l, w, h] = [sides[0], sides[1], sides[2]]
+        [l, w, h] = [sides[0], sides[1], sides[2]];
         answer1 += 2*l*w + 2*w*h + 2*h*l + Math.min(l*w,w*h ,h*l);
     })
 
     /* PART 2 */
     let answer2 = 0;
+    console.log(element)
+    element.forEach(pack => {
+        sides = pack.split('x');
+        [l, w, h] = [parseInt(sides[0]), parseInt(sides[1]), parseInt(sides[2])];
+        answer2 += l*w*h;
+        let excluded = l === Math.max(l,w,h);
+        answer2 += excluded ? 0 : l+l;
+        if(excluded){
+            answer2 += w+w + h+h;
+        }else{
+            excluded = w === Math.max(l,w,h);
+            answer2 += excluded ? h+h : w+w;
+        }
+    })
 
     /* RESULTS */
     if(answer1 === undefined && answer2 === undefined){
