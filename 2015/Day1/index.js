@@ -21,7 +21,7 @@ let day = function day(){
 
 
     /* SPECIFIC */
-
+    input.replace("\r\n", "\n").replace("\r", "\n")
     const element = input.split('');
 
     /* PART 1 */

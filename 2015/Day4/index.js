@@ -21,13 +21,8 @@ let day = function day(){
 
 
     /* SPECIFIC */
-
-    const element = input.split("\r\n\r\n");
-    let indivElem = [];
-
-    element.forEach(elem => {
-        indivElem.push(elem.split("\r\n"));
-    });
+    input.replace("\r\n", "\n").replace("\r", "\n")
+    const element = input.split("\n\n");
 
     /* PART 1 */
     let answer1 = undefined;
