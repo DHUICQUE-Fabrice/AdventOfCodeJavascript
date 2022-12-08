@@ -1,10 +1,13 @@
 let day = function day(){
+    console.log("")
+    console.log("")
+    console.log("SOLUTIONS OF YEAR 2022")
 
     /* GLOBAL */
     dayNumber = __dirname.substring(__dirname.lastIndexOf('Day')+3);
     console.log("Day " + dayNumber + " answers:");
     
-    const test = true;
+    const test = false;
     const test1 = 24000;
     const test2 = 45000;
     
@@ -28,7 +31,6 @@ let day = function day(){
     elves.forEach(element => {
         inputByElf.push(element.split("\n"));
     });
-
     /* PART 1 */
 
     let answer1 = 0;

@@ -1,4 +1,7 @@
 let day = function day(){
+    console.log("")
+    console.log("")
+    console.log("SOLUTIONS OF YEAR 2015")
 
     /* GLOBAL */
     dayNumber = __dirname.substring(__dirname.lastIndexOf('Day')+3);
@@ -21,8 +24,11 @@ let day = function day(){
 
 
     /* SPECIFIC */
-    input.replace("\r\n", "\n").replace("\r", "\n")
-    const element = input.split('');
+    //input.replace("\r\n", "\n").replace("\r", "\n")
+    //const element = input.split('');
+    
+    input.replaceAll("\r\n", "\n").replaceAll("\r", "\n")
+    const element = input.split("");
 
     /* PART 1 */
     let answer1 = 0;

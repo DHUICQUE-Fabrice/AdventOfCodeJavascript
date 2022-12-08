@@ -19,15 +19,10 @@ let day = function day(){
         console.log('Test Expected Answers: Part1=' + test1, "| Part2=" + test2);
     }
 
-
     /* SPECIFIC */
-
-    const element = input.split("\r\n\r\n");
-    let indivElem = [];
-
-    element.forEach(elem => {
-        indivElem.push(elem.split("\r\n"));
-    });
+    
+    input = input.replaceAll("\r\n", "\n");
+    const element = input.split("\n\n");
 
     /* PART 1 */
     let answer1 = undefined;

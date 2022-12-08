@@ -1,11 +1,21 @@
+class House{
+
+
+    constructor(x, y){
+        this.x = x;
+        this.y = y;
+    }
+}
+
+
 let day = function day(){
 
     /* GLOBAL */
     dayNumber = __dirname.substring(__dirname.lastIndexOf('Day')+3);
     console.log("Day " + dayNumber + " answers:");
     const test = true;
-    const test1 = 0;
-    const test2 = 0;
+    const test1 = 2;
+    const test2 = 11;
 
     const fs = require('fs');
     let dir = test ? __dirname + '/testInput.txt' : __dirname + '/input.txt';
@@ -20,12 +30,39 @@ let day = function day(){
     }
 
     /* SPECIFIC */
-    input.replace("\r\n", "\n").replace("\r", "\n")    input = input.replaceAll("\r\n", "\n");
-    const element = input.split("\n");
+    input.replaceAll("\r\n", "\n").replaceAll("\r", "\n")
+    const element = input.split("");
     
 
     /* PART 1 */
-    let answer1 = undefined;
+    let answer1 = 1;
+    let posX = 0;
+    let posY = 0;
+    let houses = [];
+    let origin = new House(posX, posY);
+    houses.push(origin);
+    
+    element.forEach(move => {
+        switch(move){
+            case '^':posY++;break;
+            case 'v':posY--;break;
+            case '<':posX--;break;
+            case '>':posX++;break;
+        }
+        let house = new House(posX, posY);
+        let contains = false;
+        houses.forEach(h => {
+            if(h.x === posX && h.y === posY){
+                contains = true;
+            }
+        });
+
+        if(!contains){
+            houses.push(house);
+            answer1++;
+        }
+    })
+
 
     /* PART 2 */
     let answer2 = undefined;
@@ -55,3 +92,6 @@ let day = function day(){
         console.log("Part 2: ", answer2);
     }
 }();
+
+
+

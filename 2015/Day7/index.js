@@ -4,7 +4,7 @@ let day = function day(){
     dayNumber = __dirname.substring(__dirname.lastIndexOf('Day')+3);
     console.log("Day " + dayNumber + " answers:");
     const test = true;
-    const test1 = 0;
+    const test1 = 95437;
     const test2 = 0;
 
     const fs = require('fs');
@@ -21,9 +21,9 @@ let day = function day(){
 
 
     /* SPECIFIC */
-    input.replace("\r\n", "\n").replace("\r", "\n")
-    const element = input.split("\n\n");
-
+    input.replaceAll("\r\n", "\n").replaceAll("\r", "\n")
+    const element = input.split("\n");
+    console.log(element)
     /* PART 1 */
     let answer1 = undefined;
 
